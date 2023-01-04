@@ -52,7 +52,7 @@ Sendo assim, pensando na **necessidade de ser ágil** para a ida e vinda de paci
 - Remoção da maioria das variáveis que possuem `MIN`, `MAX` e `MEDIAN` no final.
 
 ### 1.3. Terceiro momento
-- Seleção de variáveis com o algoritmo `BorutaPy`.
+- Seleção de variáveis com o algoritmo `BorutaPy`, indo apenas para 8 variáveis independentes e 1 dependente (uma ótima evolução)!
 
 ## 2. Análise Exploratória dos Dados
 Utilizei gráficos de barras, *violinplots*, *boxplots*, matriz de correlação (mapa de calor) e gráficos de regressão. Vão alguns exemplos de visualizações abaixo:
