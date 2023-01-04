@@ -106,3 +106,9 @@ Acabei testando no `GridSearchCV()` (função do `sklearn`) valores diferentes p
 - *Feature Importances* final:
 
 ![feature_importances_1](/img/feature_importances_1.png)
+
+## 7. Validação Final
+
+Para finalizar com o notebook, realizei a validação final com os dados separados anteriormente, é como se o modelo recebesse dados completamente novos. Na minha opinião, os resultados foram muito positivos, com um *recall* de 0.68 e *f1-score* de 0.75!
+
+![confusion_matrix_final](/img/confusion_matrix_final.png)
