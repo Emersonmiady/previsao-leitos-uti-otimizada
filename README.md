@@ -105,7 +105,7 @@ Acabei testando no `GridSearchCV()` (função do `sklearn`) valores diferentes p
 
 - *Feature Importances* final:
 
-![feature_importances_1](/img/feature_importances_1.png)
+![feature_importances_2](/img/feature_importances_2.png)
 
 ## 7. Validação Final
 
