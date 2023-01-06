@@ -85,17 +85,19 @@ Foram testados:
 
 ![metrics](/img/metrics.png)
 
-Após algumas análises, a ***Random Forest Classifier*** foi a escolhida, por ela ser a primeira em quase todas as métricas! Na verdade, o que realmente pesou foi o melhor *Recall*, pois quanto menos falsos negativos tiver, ou seja, a pessoa não ser admitida para UTI mas que na verdade era para ser, é melhor. Um *Recall* ruim pode literalmente matar pessoas... Então basicamente optei também pelo modelo com a melhor sensibilidade.
+Após algumas análises, a ***Random Forest Classifier*** foi a escolhida!
 
-Apesar de já escolher o melhor modelo, resolvi olhar para os *betas* da regressão logística, pois também indicam, de forma linear, as variáveis mais importantes para este modelo, e descobri que, o `PCR_MEAN` foi a mais importante, indicando que, quando é aumentado em uma unidade nesta variável, a chance da pessoa precisar de UTI é aumentada em  $𝑒^{2.31} \approx 10$ vezes! Para finalizar, fiz um paralelo com a *feature importances* do modelo da *Random Forest Classifier*, e a `PCR_MEAN` continuou sendo a mais importante!
+O que realmente pesou foi o melhor *Recall*, pois quanto menos falsos negativos tiver, ou seja, a pessoa não ser admitida para UTI mas que na verdade era para ser, é melhor. Um *Recall* ruim pode literalmente matar pessoas... Então basicamente optei também pelo modelo com a melhor sensibilidade.
+
+Apesar de já escolher o melhor modelo, resolvi olhar para os *betas* da regressão logística, porque também indicam, de forma linear, as variáveis mais importantes para este modelo, e descobri que, o `PCR_MEAN` foi a mais importante, indicando que, quando é aumentado em uma unidade nesta variável, a chance da pessoa precisar de UTI é aumentada em  $𝑒^{2.96} \approx 20$ vezes! Para finalizar, fiz um paralelo com a *feature importances* do modelo da *Random Forest Classifier*, e a `PCR_MEAN` continuou sendo a mais importante!
 
 ![feature_importances_1](/img/feature_importances_1.png)
 
 ## 5. *Tuning* de Hiperparâmetros
 Acabei testando no `GridSearchCV()` (função do `sklearn`) valores diferentes para `max_features` e `n_estimators`. O resultado foi:
 
-- `max_features`: 3;
-- `n_estimators`: 400.
+- `max_features`: 2;
+- `n_estimators`: 100.
 
 ![train_cv_validation_recall](/img/train_cv_validation_recall.png)
 
@@ -109,6 +111,6 @@ Acabei testando no `GridSearchCV()` (função do `sklearn`) valores diferentes p
 
 ## 7. Validação Final
 
-Para finalizar com o notebook, realizei a validação final com os dados separados anteriormente, é como se o modelo recebesse dados completamente novos. Na minha opinião, os resultados foram muito positivos, com um *recall* de 0.68 e *f1-score* de 0.75!
+Para finalizar com o notebook, realizei a validação final com os dados separados anteriormente, é como se o modelo recebesse dados completamente novos. Na minha opinião, os resultados foram muito positivos, com um *recall* de 0.87 e *f1-score* de 0.79!
 
 ![confusion_matrix_final](/img/confusion_matrix_final.png)
